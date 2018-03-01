@@ -7,4 +7,4 @@ if [ ! -f /data/config/miner-initialized ]; then
   geth --datadir "/data/blockchain" init /data/config/genesis.json
   touch /data/config/miner-initialized
 fi
-geth --ipcpath /root/.ethereum/geth.ipc --rpcaddr "$NODEIP" --rpcapi "db,eth,net,web3" --rpc --rpcport "8000" --nodekey /data/config/miner.key --networkid $NETWORKID --port "$PORT" --datadir "/data/blockchain" --nodiscover --mine --minerthreads 1 --etherbase $MINERPROCEEDS  --verbosity 9
+geth --networkid "192001" --chainid "192001" --ipcpath /root/.ethereum/geth.ipc --rpcaddr "$NODEIP" --rpcapi "db,eth,net,web3" --rpc --rpcport "8000" --nodekey /data/config/miner.key --port "33003" --datadir "/data/blockchain" --nodiscover --mine --minerthreads 1 --etherbase $MINERPROCEEDS --verbosity 9
