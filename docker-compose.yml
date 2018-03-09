@@ -1,0 +1,28 @@
+version: "2"
+services:
+
+  audittrail-miner:
+    image: audittrail-miner
+    restart: always
+    expose:
+      - "8000"
+    volumes:
+      - ./data/ethash:/root/.ethash
+      - ./data:/data
+    
+  audittrail-service:
+    image: audittrail-service
+    restart: always
+    expose:
+      - "3000"
+    volumes:
+      - ./data:/data
+    environment:
+      - COMMIT_BLOCKS=240
+      - PRIVKEY=
+
+  
+networks:    
+  default:
+    external:
+      name: audittrailnetwork
