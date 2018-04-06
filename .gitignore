@@ -1,1 +1,5 @@
 data/
+
+client/nonce.hex
+client/keyfile.hex
+client/client
